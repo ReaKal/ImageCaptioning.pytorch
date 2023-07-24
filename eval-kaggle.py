@@ -74,10 +74,10 @@ parser.add_argument('--id', type=str, default='',
 
 opt = parser.parse_args()
 
-cnn_model_weights = '/kaggle/input/image-captioning/data/imagenet_weights' + opt.cnn_model + '.pth'
+cnn_model_weights = '/kaggle/input/image-captioning/data/imagenet_weights/' + opt.cnn_model + '.pth'
 if not os.path.isfile(cnn_model_weights):
-    chunk1 = '/kaggle/input/image-captioning/data/imagenet_weights' + opt.cnn_model + 'a.pth'
-    chunk2 = '/kaggle/input/image-captioning/data/imagenet_weights' + opt.cnn_model + 'b.pth'
+    chunk1 = '/kaggle/input/image-captioning/data/imagenet_weights/' + opt.cnn_model + 'a.pth'
+    chunk2 = '/kaggle/input/image-captioning/data/imagenet_weights/' + opt.cnn_model + 'b.pth'
     with open(cnn_model_weights,'wb') as destination:
         with open(chunk1,'rb') as source:
             shutil.copyfileobj(source, destination)
